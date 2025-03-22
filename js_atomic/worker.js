@@ -15,10 +15,10 @@ async function loadAndRunWasm(sharedBuffer, startIndex, endIndex) {
         const importObject = {
             env: {
                 sharedArray: sharedArrayGlobal,
-                memory: sharedMemory // WASM might expect a shared memory import as well
-               /* 'atomic.add.i32': (ptr, offset, value) => {
+                memory: sharedMemory, // WASM might expect a shared memory import as well
+                'atomic.add.i32': (ptr, offset, value) => {
             return Atomics.add(sharedArray, (ptr + offset) / Int32Array.BYTES_PER_ELEMENT, value);
-        }*/
+        }
             }
         };
 
